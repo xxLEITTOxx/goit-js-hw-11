@@ -41,11 +41,12 @@ export function createGallery(images) {
   const newGallerySyntax = images.map(galleryItemInsertion).join("");
   myGallery.insertAdjacentHTML("beforeend", newGallerySyntax);
 
-  new SimpleLightbox(".gallery-link", {
+  const myLightbox = new SimpleLightbox(".gallery-link", {
     captionsData: "alt",
     captionDelay: 250,
     captionPosition: "bottom",
   });
+  myLightbox.refresh();
 }
 
 export function clearGallery() {
